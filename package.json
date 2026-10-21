@@ -1,0 +1,12 @@
+{
+  "name": "green-social-work-survey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "绿色社会工作视角下高校群体环境意识与绿色实践参与调查问卷系统",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

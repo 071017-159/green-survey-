@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>绿色社会工作视角下高校群体环境意识与绿色实践参与调查问卷</title>
+<style>
+  :root{
+    --green:#2e7d32; --green-dark:#1b5e20; --green-light:#e8f5e9;
+    --text:#263238; --muted:#78909c; --line:#dfe6e9; --danger:#c62828; --bg:#f4f7f5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+  .topbar{background:linear-gradient(120deg,#1b5e20,#2e7d32 55%,#388e3c);color:#fff;padding:26px 16px 20px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 60px}
+  h1{font-size:22px;margin:0 0 6px;line-height:1.4}
+  .sub{font-size:13px;opacity:.92}
+  .guide{background:#fff;border-left:4px solid var(--green);padding:14px 16px;border-radius:8px;margin:16px 0;font-size:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .progress-sticky{position:sticky;top:0;z-index:20;background:#fff;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.08);display:none}
+  .bar{height:8px;background:#e0e0e0;border-radius:6px;overflow:hidden}
+  .bar-in{height:100%;background:linear-gradient(90deg,#43a047,#66bb6a);width:0;transition:width .3s}
+  .pct{font-size:12px;color:var(--muted);margin-top:4px;text-align:right}
+  section{background:#fff;border-radius:10px;padding:18px 16px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .sec-title{font-size:16px;font-weight:700;color:var(--green-dark);margin:0 0 4px}
+  .sec-note{font-size:12.5px;color:var(--muted);margin:0 0 6px}
+  .q{margin:18px 0}
+  .q-label{font-size:14.5px;font-weight:600;margin-bottom:8px}
+  .req{color:var(--danger);margin-left:2px}
+  .opt{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;margin:6px 0;cursor:pointer;transition:.15s;font-size:14px}
+  .opt:hover{border-color:var(--green)}
+  .opt.checked{border-color:var(--green);background:var(--green-light)}
+  .opt input{accent-color:var(--green)}
+  .hint{font-size:12px;color:var(--muted);margin-top:2px}
+  .likert-item{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .likert-item:last-child{border-bottom:none}
+  .li-text{font-size:14px;margin-bottom:8px}
+  .li-scale{display:flex;align-items:center;gap:8px}
+  .lbl{font-size:11.5px;color:var(--muted);white-space:nowrap;max-width:64px}
+  .opts{flex:1;display:flex;justify-content:space-between;gap:4px}
+  .opts .o{flex:1;text-align:center}
+  .opts input{display:none}
+  .opts label{display:flex;align-items:center;justify-content:center;width:100%;height:38px;border:1px solid var(--line);border-radius:8px;cursor:pointer;font-size:14px;transition:.15s}
+  .opts input:checked+label{background:var(--green);color:#fff;border-color:var(--green)}
+  .calcheck{background:var(--green-light);border:1px dashed var(--green);border-radius:8px;padding:12px 14px;font-size:14px}
+  .calcheck input{font-size:18px;width:90px;padding:6px 10px;border:1px solid var(--green);border-radius:6px;text-align:center}
+  textarea{width:100%;min-height:100px;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;resize:vertical}
+  .btns{position:sticky;bottom:0;padding:12px 16px;background:#fff;box-shadow:0 -2px 8px rgba(0,0,0,.08);margin-top:16px;border-radius:12px}
+  .btn{display:block;width:100%;padding:14px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;background:linear-gradient(90deg,#2e7d32,#43a047);color:#fff}
+  .btn:disabled{opacity:.6;cursor:not-allowed}
+  .err-msg{color:var(--danger);font-size:13px;margin-top:8px;display:none}
+  .modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .modal{background:#fff;border-radius:14px;max-width:400px;width:100%;padding:28px 22px;text-align:center}
+  .modal .ico{width:64px;height:64px;border-radius:50%;background:var(--green-light);color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:34px}
+  .modal h2{margin:0 0 8px;color:var(--green-dark)}
+  .modal p{margin:0 0 20px;color:var(--muted);font-size:14px}
+  .modal .btn{width:auto;padding:12px 34px;display:inline-block}
+  .footnote{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap" style="padding-bottom:0">
+      <h1>绿色社会工作视角下高校群体环境意识与绿色实践参与调查问卷</h1>
+      <div class="sub">紫荆退役军人事务社“古木戎装·红棉铸绿”绿美行动研究</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="guide">您好！本问卷旨在了解我校师生对生态环境、绿色志愿服务及绿色社会工作的看法，为相关研究与校园绿美建设提供参考。问卷<strong>匿名填写</strong>，数据仅用于学术研究，预计耗时 <strong>8—10 分钟</strong>。感谢您的支持！</div>
+
+    <div class="progress-sticky" id="prog">
+      <div class="bar"><div class="bar-in" id="progIn"></div></div>
+      <div class="pct" id="progPct">0%</div>
+    </div>
+
+    <form id="survey" novalidate>
+      <section>
+        <h2 class="sec-title">第一部分：基本信息</h2>
+        <div id="sec-demo"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">第二部分：环境认知与态度</h2>
+        <p class="sec-note">以下均为五级量表：1=完全不同意，5=完全同意，请选择最符合您想法的选项。</p>
+        <div id="sec-cognition"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">第三部分：亲环境行为</h2>
+        <p class="sec-note">以下均为五级量表：1=从不，5=总是，请根据您的实际情况选择。</p>
+        <div id="sec-behavior"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">一道简单的计算题</h2>
+        <div id="sec-check"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">第四部分：绿色志愿服务参与</h2>
+        <p class="sec-note">请根据实际情况选择（1=完全不同意，5=完全同意）。</p>
+        <div id="sec-volunteer"></div>
+        <div id="sec-multi"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">第五部分：绿色社会工作认知与期望</h2>
+        <p class="sec-note">以下均为五级量表：1=完全不同意，5=完全同意。</p>
+        <div id="sec-gsw"></div>
+      </section>
+
+      <section id="sec-retired-wrap" style="display:none">
+        <h2 class="sec-title">第六部分：群体专属题（退役军人/退役大学生作答）</h2>
+        <p class="sec-note">以下均为五级量表：1=完全不同意，5=完全同意。</p>
+        <div id="sec-retired"></div>
+      </section>
+
+      <section id="sec-teacher-wrap" style="display:none">
+        <h2 class="sec-title">第六部分：群体专属题（教职工作答）</h2>
+        <p class="sec-note">以下均为五级量表：1=完全不同意，5=完全同意。</p>
+        <div id="sec-teacher"></div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">第七部分：开放题</h2>
+        <div class="q">
+          <div class="q-label">您对紫荆退役军人事务社绿美行动或校园绿色生态建设有何意见或建议？（选填）</div>
+          <textarea id="open" placeholder="欢迎留下您的宝贵意见……"></textarea>
+        </div>
+      </section>
+
+      <div class="btns">
+        <button type="submit" class="btn" id="submitBtn">提交问卷</button>
+        <p class="err-msg" id="errMsg"></p>
+        <p class="footnote">点击提交即表示您已知晓并同意本问卷匿名收集您的回答，数据仅用于学术研究。</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-mask" id="modalMask">
+    <div class="modal">
+      <div class="ico">✓</div>
+      <h2>答题已结束</h2>
+      <p>感谢您参与本次问卷调查！<br>您的回答已成功提交，您现在可以关闭本页面离开了。</p>
+      <button class="btn" id="closeBtn">确 定</button>
+    </div>
+  </div>
+
+<script>
+/* ============ 题目配置 ============ */
+var DEMO = [
+  {name:'identity', label:'您的身份类型', required:true, options:[
+    ['retired_staff','退役军人（在职教职工/社会人士）'],
+    ['retired_student','退役大学生（在读）'],
+    ['general_student','一般大学生（无服役经历）'],
+    ['teacher','教职工（教学/科研/行政/后勤）']
+  ]},
+  {name:'gender', label:'您的性别', required:true, options:[['男','男'],['女','女']]},
+  {name:'age', label:'您的年龄段', required:true, options:[['18-25','18—25 岁'],['26-35','26—35 岁'],['36-45','36—45 岁'],['46+','46 岁及以上']]},
+  {name:'grade', label:'您的年级（学生填写）', required:false, studentOnly:true, options:[['大一','大一'],['大二','大二'],['大三','大三'],['大四','大四'],['研究生','研究生'],['博士生','博士生']]},
+  {name:'discipline', label:'您的学科背景', required:true, options:[['人文社科','人文社科'],['理工农医','理工农医'],['艺术体育','艺术体育'],['其他','其他']]},
+  {name:'politics', label:'您的政治面貌', required:true, options:[['党员','中共党员（含预备）'],['团员','共青团员'],['群众','群众'],['其他','其他']]},
+  {name:'awareness', label:'您是否知晓华南农业大学“紫荆退役军人事务社”（紫荆退役军人志愿服务队）？', required:true, options:[['了解','非常了解'],['听说','听说过'],['不了解','不了解']]},
+  {name:'participate', label:'您是否参加过该社组织的活动（巡河护河、护林护木、义务植树、清明祭扫、征兵宣讲、环保宣传等）？', required:true, options:[['经常','经常参加'],['偶尔','偶尔参加'],['了解未参加','仅了解未参加'],['从未','从未接触']]},
+  {name:'frequency', label:'您参加上述绿色/志愿活动的频次约为：', required:true, options:[['m1','每月 1 次及以上'],['q1','每季度 1—2 次'],['s1','每学期 1—2 次'],['y1','每年 1 次或更少']]}
+];
+
+var SCALES = {
+  agree:['完全不同意','不同意','一般','同意','完全同意'],
+  freq:['从不','很少','有时','经常','总是']
+};
+
+var LIKERT_GROUPS = [
+  {id:'cognition', container:'sec-cognition', scale:'agree', items:[
+    ['cog1','人与自然万物是相互依赖的共同体，人类不应凌驾于自然之上。',false],
+    ['cog2','破坏自然环境最终会损害人类自身的福祉，保护环境就是保护人类自己。',false],
+    ['cog3','人类有权利为满足自身发展需要而大规模开发利用自然资源。',true],
+    ['cog4','经济发展与环境保护可以协调推进，而非彼此对立。',false],
+    ['cog5','我比较关注气候变化、环境污染、生物多样性丧失等全球性环境问题。',false],
+    ['cog6','环境恶化对贫困人群、老年人、残障人士等弱势群体的伤害更大。',false],
+    ['cog7','环境问题不仅是生态问题，更涉及社会公平，即“环境正义”问题。',false],
+    ['cog8','改善生态环境应优先保障弱势群体的环境权益。',false]
+  ]},
+  {id:'behavior', container:'sec-behavior', scale:'freq', items:[
+    ['b1','我平时注意节约用水、用电等资源。',false],
+    ['b2','我会对生活垃圾进行分类投放。',false],
+    ['b3','我尽量减少一次性用品（塑料袋、餐具、纸杯等）的使用。',false],
+    ['b4','我尽量选择步行、骑行、公共交通等绿色出行方式。',false],
+    ['b5','我参加过植树、河道清理、护林护木等生态保护志愿活动。',false],
+    ['b6','我会关注并转发环保宣传内容（推文、海报、视频等）。',false],
+    ['b7','我曾主动向亲友或同学宣传环保理念。',false],
+    ['b8','我愿意参加学校或社区组织的绿色公益行动。',false]
+  ]},
+  {id:'volunteer', container:'sec-volunteer', scale:'agree', items:[
+    ['v1','我知道紫荆社开展“红棉老兵巡河护河”活动。',false],
+    ['v2','我知道紫荆社开展古树保护（“古木戎装·红棉铸绿”）行动，如古树建档、树牌制作、古树探秘等。',false],
+    ['v3','我认为退役军人群体参与绿色志愿服务具有很好的示范带动作用。',false],
+    ['v4','我愿意参与紫荆社今后组织的植树、护河、古树保护等绿色活动。',false]
+  ]},
+  {id:'gsw', container:'sec-gsw', scale:'agree', items:[
+    ['g1','我了解“绿色社会工作”这一概念。',false],
+    ['g2','社会工作/志愿服务可以也应该介入环境保护领域。',false],
+    ['g3','在环境议题中，社工与志愿者应扮演社区动员者、资源组织者、环保教育者等角色。',false],
+    ['g4','高校学生社团（如退役军人事务社）可以在校园绿色生态建设中发挥重要作用。',false],
+    ['g5','我希望学校提供更多生态环保知识与技能培训（如古树保护、植物养护方法等）。',false],
+    ['g6','绿色环保理念应融入校园文化和育人体系。',false],
+    ['g7','我认为“退役军人+绿美建设”这一模式值得在其他高校推广。',false]
+  ]},
+  {id:'retired', container:'sec-retired', scale:'agree', items:[
+    ['r1','军旅经历增强了我的环保责任感与行动力。',false],
+    ['r2','参与绿色志愿服务有助于我更快适应退役后/返校后的学习生活，增强归属感。',false],
+    ['r3','我愿意以“老兵”身份带动身边同学、同事参与环保行动（朋辈引领）。',false]
+  ]},
+  {id:'teacher', container:'sec-teacher', scale:'agree', items:[
+    ['t1','我愿意利用专业知识为校园绿色志愿活动提供技术指导。',false],
+    ['t2','绿色实践应与学科教学、科研或管理服务相结合。',false]
+  ]}
+];
+
+var MULTI = [
+  {id:'motivation', label:'（多选）您参与绿色志愿服务的主要动机：', required:false, options:[
+    '社会责任与奉献精神','军人使命的延续','个人兴趣爱好','专业学习相关','同伴/朋辈带动','学校或组织动员','获取志愿时长或学分'
+  ]},
+  {id:'obstacle', label:'（多选）您参与绿色志愿服务的主要障碍：', required:false, options:[
+    '时间不足','不了解活动信息','缺乏生态专业知识与技能','宣传力度不够、知晓度低','活动吸引力不足','身边无人带动'
+  ]}
+];
+
+/* ============ 渲染 ============ */
+function renderRadio(q){
+  var html = '<div class="q" data-name="'+q.name+'" data-req="'+(q.required?1:0)+'">';
+  html += '<div class="q-label">'+q.label+(q.required?'<span class="req">*</span>':'')+'</div>';
+  q.options.forEach(function(o){
+    html += '<label class="opt"><input type="radio" name="'+q.name+'" value="'+esc(o[0])+'"><span>'+esc(o[1])+'</span></label>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderLikertItem(idx, item){
+  var name = item[0], text = item[1];
+  var scale = SCALES[arguments[2]||'agree'];
+  return '<div class="likert-item" data-name="'+name+'">'
+    + '<div class="li-text">'+(idx+1)+'. '+esc(text)+'</div>'
+    + '<div class="li-scale">'
+    + '<span class="lbl">'+esc(scale[0])+'</span>'
+    + '<div class="opts">'
+    + scale.map(function(s,i){
+        return '<div class="o"><input type="radio" id="'+name+'_'+i+'" name="'+name+'" value="'+(i+1)+'"><label for="'+name+'_'+i+'">'+(i+1)+'</label></div>';
+      }).join('')
+    + '</div>'
+    + '<span class="lbl">'+esc(scale[scale.length-1])+'</span>'
+    + '</div></div>';
+}
+
+function renderMulti(m){
+  var html = '<div class="q"><div class="q-label">'+esc(m.label)+'</div>';
+  m.options.forEach(function(o,i){
+    html += '<label class="opt"><input type="checkbox" name="'+m.id+'" value="'+esc(o)+'"><span>'+esc(o)+'</span></label>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderCheck(){
+  var a = Math.floor(Math.random()*9)+1;
+  var b = Math.floor(Math.random()*9)+1;
+  window.__checkA = a; window.__checkB = b;
+  var html = '<div class="calcheck q" data-name="check" data-req="1">'
+    + '<p style="margin:0 0 8px"><strong>请完成下面一道简单的计算：</strong>（用于确认您在认真作答）</p>'
+    + '<div style="font-size:20px;font-weight:700">'+a+' + '+b+' = <input type="number" id="checkAns" inputmode="numeric" placeholder="?"></div>'
+    + '</div>';
+  return html;
+}
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function init(){
+  var d = document.getElementById('sec-demo');
+  DEMO.forEach(function(q){ d.insertAdjacentHTML('beforeend', renderRadio(q)); });
+
+  LIKERT_GROUPS.forEach(function(g){
+    var c = document.getElementById(g.container);
+    g.items.forEach(function(item, idx){ c.insertAdjacentHTML('beforeend', renderLikertItem(idx, item, g.scale)); });
+  });
+
+  var m = document.getElementById('sec-multi');
+  MULTI.forEach(function(x){ m.insertAdjacentHTML('beforeend', renderMulti(x)); });
+
+  document.getElementById('sec-check').insertAdjacentHTML('beforeend', renderCheck());
+
+  // 选项点击高亮
+  document.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      var inp = o.querySelector('input');
+      if(!inp) return;
+      if(inp.type==='radio'){ o.parentElement.querySelectorAll('.opt').forEach(function(x){x.classList.remove('checked');}); }
+      o.classList.toggle('checked', inp.checked);
+    });
+  });
+
+  // 身份联动：年级/退役军人题/教职工题
+  document.querySelectorAll('input[name="identity"]').forEach(function(r){
+    r.addEventListener('change', applySkip);
+  });
+  applySkip();
+
+  // 进度条
+  var form = document.getElementById('survey');
+  form.addEventListener('change', updateProgress);
+  updateProgress();
+
+  form.addEventListener('submit', handleSubmit);
+
+  document.getElementById('closeBtn').addEventListener('click', function(){
+    document.getElementById('modalMask').style.display='none';
+    try{ window.close(); }catch(e){}
+  });
+}
+
+function identityVal(){
+  var r = document.querySelector('input[name="identity"]:checked');
+  return r ? r.value : '';
+}
+
+function applySkip(){
+  var id = identityVal();
+  var isStudent = (id==='retired_student'||id==='general_student');
+  var isRetired = (id==='retired_staff'||id==='retired_student');
+  var isTeacher = (id==='teacher');
+
+  var gradeQ = document.querySelector('.q[data-name="grade"]');
+  if(gradeQ) gradeQ.style.display = isStudent ? '' : 'none';
+
+  document.getElementById('sec-retired-wrap').style.display = isRetired ? '' : 'none';
+  document.getElementById('sec-teacher-wrap').style.display = isTeacher ? '' : 'none';
+
+  // 隐藏的必填题目去掉必填标记，避免校验卡住
+  updateProgress();
+}
+
+function getVisible(el){ return el && el.offsetParent !== null; }
+
+function visibleRequiredFields(){
+  var list = [];
+  document.querySelectorAll('#survey .q[data-req="1"]').forEach(function(q){ if(getVisible(q)) list.push(q); });
+  document.querySelectorAll('#survey .likert-item[data-name]').forEach(function(it){ if(getVisible(it)) list.push(it); });
+  return list;
+}
+
+function fieldIsAnswered(el){
+  var name = el.getAttribute('data-name');
+  if(name === 'check'){ return document.getElementById('checkAns').value.trim() !== ''; }
+  return !!document.querySelector('input[name="'+name+'"]:checked');
+}
+
+function validate(){
+  var fields = visibleRequiredFields();
+  var missing = fields.filter(function(el){ return !fieldIsAnswered(el); });
+  if(missing.length){
+    var m = document.getElementById('errMsg');
+    m.textContent = '还有 ' + missing.length + ' 处必填未完成，请完成所有标注 * 的信息题与所有量表题目。';
+    m.style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+    return false;
+  }
+  document.getElementById('errMsg').style.display='none';
+  return true;
+}
+
+function buildPayload(){
+  var p = { demo:{}, likert:{}, multi:{}, check:{} };
+  DEMO.forEach(function(q){
+    var r = document.querySelector('input[name="'+q.name+'"]:checked');
+    if(r && getVisible(r.closest('.q'))) p.demo[q.name] = r.value;
+  });
+  // 五级量表全部收集（隐藏组的未作答留空）
+  LIKERT_GROUPS.forEach(function(g){
+    g.items.forEach(function(item){
+      var n = item[0];
+      var r = document.querySelector('input[name="'+n+'"]:checked');
+      if(r) p.likert[n] = parseInt(r.value,10);
+    });
+  });
+  MULTI.forEach(function(m){
+    if(!getVisible(document.querySelector('input[name="'+m.id+'"]').closest('.q'))) return;
+    var vals = [];
+    document.querySelectorAll('input[name="'+m.id+'"]:checked').forEach(function(c){ vals.push(c.value); });
+    p.multi[m.id] = vals;
+  });
+  p.check = { a: window.__checkA, b: window.__checkB, ans: parseInt(document.getElementById('checkAns').value,10) || null };
+  p.open = document.getElementById('open').value.trim();
+  return p;
+}
+
+function showModal(){
+  document.getElementById('modalMask').style.display='flex';
+  document.getElementById('submitBtn').disabled = false;
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+  if(!validate()) return;
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = '正在提交…';
+  fetch('/api/records', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(buildPayload())
+  }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+    .then(function(res){
+      if(res.ok){ showModal(); }
+      else { throw new Error('submit failed'); }
+    })
+    .catch(function(err){
+      btn.disabled = false; btn.textContent = '提交问卷';
+      var m = document.getElementById('errMsg');
+      m.textContent = '提交失败，请检查网络后重试。';
+      m.style.display='block';
+    });
+}
+
+function updateProgress(){
+  var fields = visibleRequiredFields();
+  var done = fields.filter(function(el){ return fieldIsAnswered(el); }).length;
+  var total = fields.length;
+  var pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('progIn').style.width = pct+'%';
+  document.getElementById('progPct').textContent = '已完成 '+done+' / '+total+' 项（'+pct+'%）';
+  document.getElementById('prog').style.display = (total>0 ? 'block':'none');
+}
+
+init();
+</script>
+</body>
+</html>
